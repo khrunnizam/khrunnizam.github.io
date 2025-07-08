@@ -1,4 +1,15 @@
 document.addEventListener('DOMContentLoaded', () => {
+    const typed = new Typed('#subtitle', {
+        strings: [
+            "Informatics Student",
+            "Backend Developer Enthusiast",
+            "Lifelong Learner"
+        ],
+        typeSpeed: 70,  // Kecepatan mengetik
+        backSpeed: 40,  // Kecepatan menghapus
+        loop: true,     // Mengulang animasi
+        backDelay: 1500 // Jeda sebelum mulai menghapus
+    });
 
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
