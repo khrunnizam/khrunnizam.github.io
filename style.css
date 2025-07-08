@@ -3,9 +3,12 @@
     --bg-primary: #121212;
     --bg-secondary: #1E1E1E;
     --text-primary: #E0E0E0;
-    --text-secondary: #A0A0A0;
-    --accent-primary: #FFFFFF; /* Menggunakan Putih sebagai aksen utama untuk kesan bersih & kontras */
-    --accent-secondary: #BB86FC; /* Warna ungu untuk link, memberikan sedikit warna */
+    /* BERUBAH DI SINI: Warna dibuat lebih terang agar lebih mudah dibaca */
+    --text-secondary: #BDBDBD; 
+    --accent-primary: #FFFFFF;
+    --accent-secondary: #BB86FC;
+    --border-color: #2d2d2d; /* Menambahkan variabel untuk border */
+    --shadow-color: rgba(187, 134, 252, 0.15); /* Menambahkan variabel untuk shadow */
     --font-heading: 'Poppins', sans-serif;
     --font-body: 'Inter', sans-serif;
 }
@@ -52,7 +55,6 @@ a:hover {
 }
 
 /* --- Header & Foto Profil --- */
-/* --- Header & Foto Profil (SUDAH DIPERBAIKI) --- */
 header {
     background-color: var(--bg-primary);
     padding: 30px 0;
@@ -66,6 +68,10 @@ header .container {
     gap: 30px;
 }
 
+.header-text {
+    flex-grow: 1;
+}
+
 .header-text h1 {
     font-size: 2.5em;
     margin: 0 0 5px 0;
@@ -75,14 +81,14 @@ header .container {
     font-size: 1.2em;
     color: var(--text-secondary);
     margin: 0;
-    min-height: 44px; /* KUNCI: Memberi ruang agar layout tidak "loncat" saat teks diketik */
+    min-height: 44px; /* Memberi ruang agar layout tidak "loncat" */
 }
 
 .header-right {
     display: flex;
     align-items: center;
     gap: 20px;
-    flex-shrink: 0; /* Mencegah bagian kanan (foto) menyusut */
+    flex-shrink: 0;
 }
 
 .profile-picture {
@@ -99,18 +105,16 @@ main section {
     padding: 60px 0;
 }
 
-/* --- KUNCI ANIMASI: Initial State --- */
 .fade-in-section {
     opacity: 0;
     transform: translateY(40px);
     transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
-/* State setelah elemen terlihat */
+
 .fade-in-section.is-visible {
     opacity: 1;
     transform: translateY(0);
 }
-
 
 /* --- Skills Section --- */
 .skills-grid {
@@ -146,7 +150,7 @@ main section {
 
 .project-card {
     background-color: var(--bg-secondary);
-    border: 1px solid #2d2d2d;
+    border: 1px solid var(--border-color);
     border-radius: 12px;
     padding: 25px;
     display: flex;
@@ -166,7 +170,7 @@ main section {
 }
 
 .project-card p {
-    flex-grow: 1; /* Mendorong tags ke bawah */
+    flex-grow: 1;
     color: var(--text-secondary);
     margin-bottom: 20px;
 }
@@ -220,71 +224,21 @@ footer {
     padding: 30px;
     margin-top: 40px;
     color: #666;
-    border-top: 1px solid #2d2d2d;
+    border-top: 1px solid var(--border-color);
     font-size: 0.9em;
 }
-/* Mobile Styles */
+
+/* --- Mobile Styles --- */
 @media (max-width: 768px) {
-    /* --- Header & Foto Profil (VERSI FINAL DIPERBAIKI) --- */
-header {
-    background-color: var(--bg-primary);
-    padding: 30px 0;
-    border-bottom: 1px solid var(--border-color);
-}
-
-header .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 30px;
-}
-
-.header-text {
-    flex-grow: 1; /* Memastikan blok teks mengisi ruang yang tersedia */
-}
-
-.header-text h1 {
-    font-size: 2.5em;
-    margin: 0 0 5px 0;
-}
-
-.header-text p {
-    font-size: 1.2em;
-    color: var(--text-secondary);
-    margin: 0;
-    /* KUNCI UTAMA: Memberi ruang vertikal agar tidak hilang/loncat */
-    min-height: 44px; 
-}
-
-.header-right {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    flex-shrink: 0; /* Mencegah foto dan tombol menyusut */
-}
-
-.profile-picture {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 4px solid var(--accent-primary);
-    box-shadow: 0 0 25px var(--shadow-color);
-}
-
-/* --- Mobile Styles (DI DALAM @media) --- */
-@media (max-width: 768px) {
-    /* ...gaya mobile lain yang sudah ada... */
-
     header .container {
         flex-direction: column;
-        gap: 5px; /* Kurangi jarak vertikal */
+        gap: 5px;
     }
 
     .header-text {
         order: 2; /* Teks di bawah foto */
         text-align: center;
-        width: 100%; /* Pastikan blok teks memenuhi lebar */
+        width: 100%;
     }
 
     .header-right {
@@ -294,7 +248,7 @@ header .container {
     .profile-picture {
         width: 120px;
         height: 120px;
-        margin-bottom: 10px; /* Beri jarak ke teks di bawahnya */
+        margin-bottom: 10px;
     }
 
     .header-text h1 {
@@ -303,21 +257,19 @@ header .container {
 
     .header-text p {
         font-size: 1.1em;
-        /* KUNCI UTAMA UNTUK MOBILE: Beri ruang yang cukup untuk 2 baris */
-        min-height: 60px; 
+        min-height: 60px; /* Ruang cukup untuk 2 baris di mobile */
     }
-    
-    /* ...sisa gaya mobile lain... */
-}
 
-    .profile-picture {
-       width: 100px; /* Ukuran lebih kecil */
-        height: 100px;
-       margin-top: 10px; /* Beri sedikit jarak dari teks di atasnya */
-       margin-bottom: 15px; /* Beri sedikit jarak dari garis bawah header */
+    main section {
+        padding: 40px 0;
     }
+
+    h2 {
+        font-size: 1.8em;
+        margin-bottom: 30px;
+    }
+
     .skills-grid {
-        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* Lebih banyak kolom fleksibel */
         gap: 10px;
     }
 
@@ -327,11 +279,11 @@ header .container {
     }
 
     .projects-grid {
-        grid-template-columns: 1fr; /* Hanya satu kolom di layar kecil */
+        grid-template-columns: 1fr; /* Hanya satu kolom */
     }
 
     .contact-links {
-        flex-direction: column; /* Tombol kontak jadi vertikal */
+        flex-direction: column;
         align-items: center;
         gap: 10px;
     }
@@ -339,15 +291,6 @@ header .container {
     .contact-button {
         width: 80%;
         text-align: center;
-    }
-
-    h2 {
-        font-size: 1.8em;
-        margin-bottom: 30px;
-    }
-
-    main section {
-        padding: 40px 0;
     }
 
     footer {
