@@ -202,10 +202,12 @@ main section {
     margin-top: 20px;
 }
 
+/* --- OPSI A: Tombol Elegan (Garis Tepi Putih) --- */
+/* --- OPSI B: Tombol Solid (Latar Belakang Putih) --- */
 .contact-button {
-    background-color: transparent;
-    border: 2px solid var(--accent-secondary);
-    color: var(--accent-secondary);
+    background-color: #FFFFFF; /* Latar belakang putih */
+    border: 2px solid #FFFFFF;
+    color: #121212; /* Teks hitam */
     padding: 12px 25px;
     border-radius: 8px;
     font-weight: 600;
@@ -214,8 +216,9 @@ main section {
 }
 
 .contact-button:hover {
-    background-color: var(--accent-secondary);
-    color: var(--bg-primary);
+    background-color: #E0E0E0; /* Latar jadi abu-abu saat disentuh */
+    border-color: #E0E0E0;
+    color: #121212;
 }
 
 /* --- Footer --- */
