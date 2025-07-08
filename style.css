@@ -225,41 +225,89 @@ footer {
 }
 /* Mobile Styles */
 @media (max-width: 768px) {
-    header {
-       padding: 20px 0; /* Kurangi sedikit padding atas bawah */
-       margin-bottom: 20px; /* Beri sedikit jarak ke section berikutnya */
-    }
-    .container {
-        width: 95%;
-        padding: 15px 0;
-    }
+    /* --- Header & Foto Profil (VERSI FINAL DIPERBAIKI) --- */
+header {
+    background-color: var(--bg-primary);
+    padding: 30px 0;
+    border-bottom: 1px solid var(--border-color);
+}
 
-    header .container {
-    flex-direction: column; /* Membuat elemen utama (blok teks & blok kanan) tersusun vertikal */
-    gap: 15px; /* Memberi jarak antar elemen */
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
 }
 
 .header-text {
-    order: 2; /* PENTING: Blok teks akan muncul di posisi kedua (di bawah foto) */
-    text-align: center;
-}
-
-.header-right {
-    order: 1; /* PENTING: Blok kanan (foto) akan muncul di posisi pertama (paling atas) */
-}
-
-.profile-picture {
-    width: 120px; /* Ukuran foto diperkecil untuk mobile */
-    height: 120px;
+    flex-grow: 1; /* Memastikan blok teks mengisi ruang yang tersedia */
 }
 
 .header-text h1 {
-    font-size: 2em; /* Ukuran font judul diperkecil */
+    font-size: 2.5em;
+    margin: 0 0 5px 0;
 }
 
 .header-text p {
-    font-size: 1.1em; /* Ukuran font sub-judul diperkecil */
-    min-height: 60px; /* Sesuaikan ruang agar pas untuk 2 baris teks animasi */
+    font-size: 1.2em;
+    color: var(--text-secondary);
+    margin: 0;
+    /* KUNCI UTAMA: Memberi ruang vertikal agar tidak hilang/loncat */
+    min-height: 44px; 
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-shrink: 0; /* Mencegah foto dan tombol menyusut */
+}
+
+.profile-picture {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid var(--accent-primary);
+    box-shadow: 0 0 25px var(--shadow-color);
+}
+
+/* --- Mobile Styles (DI DALAM @media) --- */
+@media (max-width: 768px) {
+    /* ...gaya mobile lain yang sudah ada... */
+
+    header .container {
+        flex-direction: column;
+        gap: 5px; /* Kurangi jarak vertikal */
+    }
+
+    .header-text {
+        order: 2; /* Teks di bawah foto */
+        text-align: center;
+        width: 100%; /* Pastikan blok teks memenuhi lebar */
+    }
+
+    .header-right {
+        order: 1; /* Foto di atas teks */
+    }
+
+    .profile-picture {
+        width: 120px;
+        height: 120px;
+        margin-bottom: 10px; /* Beri jarak ke teks di bawahnya */
+    }
+
+    .header-text h1 {
+        font-size: 2em;
+    }
+
+    .header-text p {
+        font-size: 1.1em;
+        /* KUNCI UTAMA UNTUK MOBILE: Beri ruang yang cukup untuk 2 baris */
+        min-height: 60px; 
+    }
+    
+    /* ...sisa gaya mobile lain... */
 }
 
     .profile-picture {
