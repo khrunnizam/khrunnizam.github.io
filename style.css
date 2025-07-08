@@ -235,19 +235,32 @@ footer {
     }
 
     header .container {
-       flex-direction: column; /* Teks dan gambar jadi vertikal */
-       align-items: center; /* Tengah secara horizontal */
-       text-align: center; /* Teks di tengah */
-       gap: 10px; /* Kurangi gap antar elemen header */
-    }
+    flex-direction: column; /* Membuat elemen utama (blok teks & blok kanan) tersusun vertikal */
+    gap: 15px; /* Memberi jarak antar elemen */
+}
 
-    .header-text h1 {
-        font-size: 2em;
-    }
+.header-text {
+    order: 2; /* PENTING: Blok teks akan muncul di posisi kedua (di bawah foto) */
+    text-align: center;
+}
 
-    .header-text p {
-        font-size: 1em;
-    }
+.header-right {
+    order: 1; /* PENTING: Blok kanan (foto) akan muncul di posisi pertama (paling atas) */
+}
+
+.profile-picture {
+    width: 120px; /* Ukuran foto diperkecil untuk mobile */
+    height: 120px;
+}
+
+.header-text h1 {
+    font-size: 2em; /* Ukuran font judul diperkecil */
+}
+
+.header-text p {
+    font-size: 1.1em; /* Ukuran font sub-judul diperkecil */
+    min-height: 60px; /* Sesuaikan ruang agar pas untuk 2 baris teks animasi */
+}
 
     .profile-picture {
        width: 100px; /* Ukuran lebih kecil */

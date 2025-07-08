@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const typed = new Typed('#subtitle', {
         strings: [
             "Informatics Student",
+            "University of Madura '24",
             "Backend Developer Enthusiast",
             "Lifelong Learner"
         ],
