@@ -63,10 +63,9 @@ header {
 
 header .container {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 30px;
+    flex-direction: row;
 }
+
 
 .header-text {
     flex-grow: 1;
@@ -232,10 +231,9 @@ footer {
 }
 
 /* --- Mobile Styles --- */
-@media (max-width: 768px) {
+@media (max-width: 600px) {
     header .container {
-        flex-direction: column;
-        gap: 5px;
+    flex-direction: column; /* Mengubah tata letak menjadi vertikal */
     }
 
     .header-text {
