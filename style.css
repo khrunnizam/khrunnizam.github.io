@@ -299,9 +299,4 @@ footer {
         padding: 20px;
         font-size: 0.8em;
     }
-    
-    /* PERBAIKAN 2: Sembunyikan kursor dari efek mengetik di mobile */
-    .typed-cursor {
-        display: none !important;
-    }
 }
