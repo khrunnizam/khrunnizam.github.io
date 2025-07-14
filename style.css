@@ -3,12 +3,11 @@
     --bg-primary: #121212;
     --bg-secondary: #1E1E1E;
     --text-primary: #E0E0E0;
-    /* BERUBAH DI SINI: Warna dibuat lebih terang agar lebih mudah dibaca */
     --text-secondary: #BDBDBD; 
     --accent-primary: #FFFFFF;
     --accent-secondary: #BB86FC;
-    --border-color: #2d2d2d; /* Menambahkan variabel untuk border */
-    --shadow-color: rgba(187, 134, 252, 0.15); /* Menambahkan variabel untuk shadow */
+    --border-color: #2d2d2d;
+    --shadow-color: rgba(187, 134, 252, 0.15);
     --font-heading: 'Poppins', sans-serif;
     --font-body: 'Inter', sans-serif;
 }
@@ -65,7 +64,6 @@ header .container {
     display: flex;
     flex-direction: row;
 }
-
 
 .header-text {
     flex-grow: 1;
@@ -201,12 +199,10 @@ main section {
     margin-top: 20px;
 }
 
-/* --- OPSI A: Tombol Elegan (Garis Tepi Putih) --- */
-/* --- OPSI B: Tombol Solid (Latar Belakang Putih) --- */
 .contact-button {
-    background-color: #FFFFFF; /* Latar belakang putih */
+    background-color: #FFFFFF;
     border: 2px solid #FFFFFF;
-    color: #121212; /* Teks hitam */
+    color: #121212;
     padding: 12px 25px;
     border-radius: 8px;
     font-weight: 600;
@@ -215,7 +211,7 @@ main section {
 }
 
 .contact-button:hover {
-    background-color: #E0E0E0; /* Latar jadi abu-abu saat disentuh */
+    background-color: #E0E0E0;
     border-color: #E0E0E0;
     color: #121212;
 }
@@ -233,7 +229,7 @@ footer {
 /* --- Mobile Styles --- */
 @media (max-width: 600px) {
     header .container {
-    flex-direction: column; /* Mengubah tata letak menjadi vertikal */
+        flex-direction: column;
     }
 
     .header-text {
@@ -244,6 +240,8 @@ footer {
 
     .header-right {
         order: 1; /* Foto di atas teks */
+        width: 100%;
+        justify-content: center; /* <<< PERBAIKAN 1: Menengahkan gambar profil */
     }
 
     .profile-picture {
@@ -258,7 +256,7 @@ footer {
 
     .header-text p {
         font-size: 1.1em;
-        min-height: 60px; /* Ruang cukup untuk 2 baris di mobile */
+        min-height: 60px;
     }
 
     main section {
@@ -280,7 +278,7 @@ footer {
     }
 
     .projects-grid {
-        grid-template-columns: 1fr; /* Hanya satu kolom */
+        grid-template-columns: 1fr;
     }
 
     .contact-links {
@@ -297,5 +295,10 @@ footer {
     footer {
         padding: 20px;
         font-size: 0.8em;
+    }
+    
+    /* PERBAIKAN 2: Sembunyikan kursor dari efek mengetik di mobile */
+    .typed-cursor {
+        display: none !important;
     }
 }
